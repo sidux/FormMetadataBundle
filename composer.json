@@ -9,8 +9,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "FlintLabs\\Bundle\\FormMetadataBundle\\FlintLabsFormMetadataBundle": ""
+            "FlintLabs\\Bundle\\FormMetadataBundle": ""
         }
     },
-    "target-dir":"FlintLabs/Bundle/FormMetadataBundle/FlintLabsFormMetadataBundle"
+    "target-dir":"FlintLabs/Bundle/FormMetadataBundle"
 }
