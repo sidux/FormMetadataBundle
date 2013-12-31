@@ -1,8 +1,10 @@
 # Form Metadata reader for Symfony2
 
 Facilitates the basic configuration of form fields from metadata that is defined elsewhere, such as through annotations
-in the entity or with an external yaml file (TODO). Allows for more generic handling of form types through controllers,
+in the entity. Allows for more generic handling of form types through controllers,
 making them able to deal with dynamic entity/forms (such as for use with CMS sites).
+
+This project was forked from [FlintLabs/FormMetadataBundle](https://github.com/FlintLabs/FormMetadataBundle) which appears to be abandoned.
 
 See the form fields [Annotations Reference](https://github.com/FlintLabs/FormMetadataBundle/wiki/Annotations-reference)
 
@@ -62,24 +64,10 @@ as a best practice.
 
 ## Installation
 
-### Update your deps file
+### Composer Installation
 
-    [Form-Metadata]
-        git=git@github.com:FlintLabs/Form-Metadata.git
-        target=/bundles/FlintLabs/Bundle/FormMetadataBundle
+    php composer.phar require malwarebytes/form-metadata-bundle
 
-### Update your vendors
-
-    php bin/vendors update
-
-### Update your autoloader
-
-    // app/autoload.php
-    $loader->registerNamespaces(array(
-        // ...
-        'FlintLabs\\Bundle\\FormMetadataBundle' => __DIR__.'/../vendor/bundles/',
-        // ...
-    ));
 
 ### Register the bundle references
 
