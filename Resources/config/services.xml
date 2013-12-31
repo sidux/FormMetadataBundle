@@ -4,8 +4,8 @@
 
 
 	<parameters>
-        <parameter key="form_metadata.mapper.class">FlintLabs\Bundle\FormMetadataBundle\FormMapper</parameter>
-		<parameter key="form_metadata.reader.annotation.class">FlintLabs\Bundle\FormMetadataBundle\Driver\AnnotationsDriver</parameter>
+        <parameter key="form_metadata.mapper.class">Malwarebytes\FormMetadataBundle\FormMapper</parameter>
+		<parameter key="form_metadata.reader.annotation.class">Malwarebytes\FormMetadataBundle\Driver\AnnotationsDriver</parameter>
 	</parameters>
 
     <services>

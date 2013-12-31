@@ -3,7 +3,7 @@
  * Copyright Cameron Manderson (c) 2011 All rights reserved.
  * Date: 21/09/11
  */
-namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
+namespace Malwarebytes\FormMetadataBundle\Configuration;
 use \Doctrine\Common\Annotations\Annotation;
 /**
  * e.g. @Form\FieldGroup('example')

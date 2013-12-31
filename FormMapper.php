@@ -7,10 +7,10 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace FlintLabs\Bundle\FormMetadataBundle;
+namespace Malwarebytes\FormMetadataBundle;
 
 use Symfony\Component\Form\FormFactory,
-FlintLabs\Bundle\FormMetadataBundle\Driver\MetadataDriverInterface;
+    Malwarebytes\FormMetadataBundle\Driver\MetadataDriverInterface;
 /**
  * Obtains any metadata from the entity and adds it's configuration
  * to the form

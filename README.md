@@ -32,7 +32,7 @@ as a best practice.
 
 ### Entity with some basic form annotations
 
-    use FlintLabs\Bundle\FormMetadataBundle\Configuration as Form;
+    use Malwarebytes\FormMetadataBundle\Configuration as Form;
     use Symfony\Bundle\Validator\Constraints as Assert;
 
     class Contact
@@ -83,7 +83,7 @@ as a best practice.
     {
         return array(
             // ...
-            new FlintLabs\Bundle\FormMetadataBundle\FlintLabsFormMetadataBundle(),
+            new Malwarebytes\FormMetadataBundle\FlintLabsFormMetadataBundle(),
             // ...
         );
     }

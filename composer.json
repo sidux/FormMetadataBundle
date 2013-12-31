@@ -28,8 +28,8 @@
     },
     "autoload": {
         "psr-0": {
-            "FlintLabs\\Bundle\\FormMetadataBundle": ""
+            "Malwarebytes\\FormMetadataBundle": ""
         }
     },
-    "target-dir":"FlintLabs/Bundle/FormMetadataBundle"
+    "target-dir":"Malwarebytes/FormMetadataBundle"
 }

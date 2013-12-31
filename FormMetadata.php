@@ -7,8 +7,8 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace FlintLabs\Bundle\FormMetadataBundle;
-use FlintLabs\Bundle\FormMetadataBundle\Configuration\Field;
+namespace Malwarebytes\FormMetadataBundle;
+use Malwarebytes\FormMetadataBundle\Configuration\Field;
 /**
  * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
