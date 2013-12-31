@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
-
+use \Doctrine\Common\Annotations\Annotation;
 /**
  * Contains the configuration elements for the field
  *
@@ -16,8 +16,9 @@ namespace FlintLabs\Bundle\FormMetadataBundle\Configuration;
  *
  * @Annotation
  * @author camm (camm@flintinteractive.com.au)
+ * @Annotation
  */
-class Field extends \Doctrine\Common\Annotations\Annotation
+class Field extends Annotation
 {
 
     /**
