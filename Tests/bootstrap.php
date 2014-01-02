@@ -4,7 +4,7 @@
  */
 
 
-$file = __DIR__.'/../vendor/autoload.php';
+$file = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 if (!file_exists($file)) {
     spl_autoload_register(function($class)
         {
@@ -15,6 +15,6 @@ if (!file_exists($file)) {
             }
         });
 } else {
-    require_once __DIR__.'/fixtures/framework/autoload.php';
+    //require_once __DIR__.'/fixtures/framework/autoload.php';
     require_once $file;
 }
