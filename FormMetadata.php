@@ -51,7 +51,7 @@ class FormMetadata
 
     /**
      * Add a field configuration
-     * @param Mapping\Field $field
+     * @param Field $field
      * @return void
      */
     public function addField(Field $field)
