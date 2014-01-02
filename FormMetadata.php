@@ -36,7 +36,7 @@ class FormMetadata
      */
     public function addFormType($formTypes)
     {
-        $this->formTypes = $formTypes;
+        $this->formTypes[] = $formTypes;
     }
 
     /**

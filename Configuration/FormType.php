@@ -28,5 +28,16 @@ use \Doctrine\Common\Annotations\Annotation;
  * @Annotation
  */
 class FormType {
+    /**
+     * Default for when a type is not specified
+     * @var string
+     */
+    public $value;
 
+
+    /**
+     * The parameter name
+     * @var string
+     */
+    public $name;
 }

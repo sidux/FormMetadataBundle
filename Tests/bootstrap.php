@@ -18,3 +18,12 @@ if (!file_exists($file)) {
     //require_once __DIR__.'/fixtures/framework/autoload.php';
     require_once $file;
 }
+
+
+$annotation_namespace_path=__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.".." .DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
+
+\Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
+    'Malwarebytes\FormMetadataBundle\Configuration',
+    $annotation_namespace_path
+);
+
