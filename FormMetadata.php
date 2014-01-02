@@ -9,6 +9,8 @@
  */
 namespace Malwarebytes\FormMetadataBundle;
 use Malwarebytes\FormMetadataBundle\Configuration\Field;
+use Malwarebytes\FormMetadataBundle\Configuration\FormType;
+
 /**
  * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
@@ -40,7 +42,7 @@ class FormMetadata
     }
 
     /**
-     * @return array
+     * @return FormType[]
      */
     public function getFormTypes()
     {

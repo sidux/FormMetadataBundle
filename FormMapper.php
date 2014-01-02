@@ -20,7 +20,7 @@ class FormMapper
 {
     /**
      * Drivers that will be used to obtaining metadata
-     * @var array
+     * @var MetadataDriverInterface[]
      */
     private $drivers = array();
 
@@ -78,6 +78,13 @@ class FormMapper
             }
             
             $formBuilder->add($builder);
+        }
+
+        $formTypes = $metadata->getFormTypes();
+
+        foreach($formTypes as $formType) {
+            $formTypeInstance = new $formType->value;
+            $formBuilder->add($formType->name,$formTypeInstance);
         }
 
         return $formBuilder;
