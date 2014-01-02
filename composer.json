@@ -1,30 +1,33 @@
 {
     "name":"malwarebytes/form-metadata-bundle",
-    "type":"library",
+    "type": "symfony-bundle",
     "description":"Use annotations with the forms builder e.g. @Form\\Field(\"text\"). Associates metadata along with the entity class. Useful to make more generic controllers that can deal with dynamic entities (such as CMS scenarios).",
     "keywords": ["form","annotations","metadata"],
     "homepage":"https://github.com/Malwarebytes/FormMetadataBundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jonathan Chan",
+        "name": "Jonathan Chan",
 	    "email": "jchan@malwarebytes.org",
 	    "role": "Developer"
 	},
         {
-            "name": "Paul Hendryx",
+        "name": "Paul Hendryx",
 	    "email": "phendryx@malwarebytes.org",
 	    "role": "Developer"
 	},
         {
-            "name": "Cameron Manderson",
+        "name": "Cameron Manderson",
 	    "email": "cameronmanderson@gmail.com",
 	    "role": "Original Author"
 	}
     ],
     "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "~2.2"
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "symfony/symfony": "~2.3",
+        "doctrine/annotations":"1.1.2"
     },
     "autoload": {
         "psr-0": {

@@ -23,12 +23,24 @@ as a best practice.
      * @Form\Field("date", widget="single_text")
      */
 
-**Group Examlpe**
+**Group Example**
 
     /**
      * @Form\Field("date", widget="single_text")
      * @Form\FieldGroup("example")
      */
+
+**Embedded Entity Example**
+
+    /**
+     * Refer to http://symfony.com/doc/current/book/forms.html#embedded-forms
+     *
+     * You have to generate your own FormType in current implementation
+     *
+     * @Form\FormType("Acme\TaskBundle\Form\Type\CategoryType")
+     */
+
+
 
 ### Entity with some basic form annotations
 

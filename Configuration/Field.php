@@ -14,7 +14,6 @@ use \Doctrine\Common\Annotations\Annotation;
  *
  * e.g. @Form\Field("text", foo="bar")
  *
- * @Annotation
  * @author camm (camm@flintinteractive.com.au)
  * @Annotation
  */

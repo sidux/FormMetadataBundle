@@ -33,6 +33,7 @@ class AnnotationsDriver implements MetadataDriverInterface
             foreach($properties as $property) {
                 $field = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\Field');
 				$fieldGroup = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\FieldGroup');
+                $formType = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\FormType');
                 if (!empty($fieldGroup) && !empty($field)) {
                     if (empty($field->name)) {
                         $field->name = $property->getName();
@@ -43,6 +44,12 @@ class AnnotationsDriver implements MetadataDriverInterface
                         $field->name = $property->getName();
                     }
                     $metadata->addField($field);
+                }
+                if (!empty($formType)) {
+                    if(empty($field->name)) {
+                        $formType->name = $property->getName();
+                    }
+                    $metadata->addFormType($formType);
                 }
             }
             $reflectionClass = $reflectionClass->getParentClass();

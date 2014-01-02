@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace Malwarebytes\FormMetadataBundle\Driver;
+use Malwarebytes\FormMetadataBundle\FormMetadata;
 
 /**
  *
@@ -19,7 +20,7 @@ interface MetadataDriverInterface
      * Read the entity and create an associated metadata
      * @abstract
      * @param $entity
-     * @return null|FormMetadata
+     * @return FormMetadata
      */
     public function getMetadata($entity);
 }

@@ -9,6 +9,8 @@
  */
 namespace Malwarebytes\FormMetadataBundle;
 use Malwarebytes\FormMetadataBundle\Configuration\Field;
+use Malwarebytes\FormMetadataBundle\Configuration\FormType;
+
 /**
  * The meta data containing the configuration of the form
  * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
@@ -25,9 +27,33 @@ class FormMetadata
      */
     protected $groups = array();
 
+
+    /**
+     * @var array
+     */
+    protected $formTypes = array();
+
+    /**
+     * @param array $formTypes
+     */
+    public function addFormType($formTypes)
+    {
+        $this->formTypes[] = $formTypes;
+    }
+
+    /**
+     * @return FormType[]
+     */
+    public function getFormTypes()
+    {
+        return $this->formTypes;
+    }
+
+
+
     /**
      * Add a field configuration
-     * @param Mapping\Field $field
+     * @param Field $field
      * @return void
      */
     public function addField(Field $field)
