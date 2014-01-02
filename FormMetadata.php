@@ -25,6 +25,30 @@ class FormMetadata
      */
     protected $groups = array();
 
+
+    /**
+     * @var array
+     */
+    protected $formTypes = array();
+
+    /**
+     * @param array $formTypes
+     */
+    public function addFormType($formTypes)
+    {
+        $this->formTypes = $formTypes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFormTypes()
+    {
+        return $this->formTypes;
+    }
+
+
+
     /**
      * Add a field configuration
      * @param Mapping\Field $field
