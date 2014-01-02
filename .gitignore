@@ -15,4 +15,7 @@
 
 .idea/Form-Annotations.iml
 
+
+# Testing related items
 /vendor
+composer.lock
