@@ -8,7 +8,9 @@
  * file that was distributed with this source code.
  */
 namespace Malwarebytes\FormMetadataBundle;
+use Malwarebytes\FormMetadataBundle\Configuration\EmbeddedForm;
 use Malwarebytes\FormMetadataBundle\Configuration\Field;
+use Malwarebytes\FormMetadataBundle\Configuration\FieldGroup;
 use Malwarebytes\FormMetadataBundle\Configuration\FormType;
 
 /**
@@ -41,7 +43,7 @@ class FormMetadata
     /**
      * @param array $formTypes
      */
-    public function addFormType($formType)
+    public function addFormType(FormType $formType)
     {
         $this->formTypes[] = $formType;
     }
@@ -77,13 +79,13 @@ class FormMetadata
     /**
      * @param $embeddedForm
      */
-    public function addEmbeddedForm($embeddedForm)
+    public function addEmbeddedForm(EmbeddedForm $embeddedForm)
     {
         $this->embeddedForms[] = $embeddedForm;
     }
 
     /**
-     * @return array
+     * @return EmbeddedForm[]
      */
     public function getEmbeddedForms()
     {
@@ -106,7 +108,7 @@ class FormMetadata
 
     /**
      * 
-     * @return array
+     * @return FieldGroup[]
      */
     public function getGroups()
     {

@@ -9,6 +9,7 @@
  */
 namespace Malwarebytes\FormMetadataBundle;
 
+use Malwarebytes\FormMetadataBundle\Form\Type\GenericFormMapperFormType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormFactory,
     Malwarebytes\FormMetadataBundle\Driver\MetadataDriverInterface;
@@ -19,6 +20,15 @@ use Symfony\Component\Form\FormFactory,
  */
 class FormMapper
 {
+    public static $MAX_FORM_EMBEDDED_DEPTH=50;
+
+    /**
+     * Variable to count the depth of embedded forms to prevent infinite recursive functions
+     *
+     * @var int
+     */
+    static private $embedDepth=0;
+
     /**
      * Drivers that will be used to obtaining metadata
      * @var MetadataDriverInterface[]
@@ -72,6 +82,8 @@ class FormMapper
         if(empty($metadata)) return $formBuilder;
 
         // Configure the form
+
+        // fields
         $fields = $metadata->getFields();
         foreach($fields as $field) {
             // TODO: Detect "new x()" in field value or type option for AbstractType creation
@@ -79,8 +91,8 @@ class FormMapper
             $formBuilder->add($field->name, $field->value, $field->options);
         }
 
+        // groups
         $groups = $metadata->getGroups();
-
         foreach($groups as $groupName => $fields) {
             $builder = $formBuilder->create($groupName, 'form', array('virtual' => true));
 
@@ -92,11 +104,24 @@ class FormMapper
             $formBuilder->add($builder);
         }
 
+        // types
         $formTypes = $metadata->getFormTypes();
-
         foreach($formTypes as $formType) {
             $formTypeInstance = new $formType->value;
             $formBuilder->add($formType->name,$formTypeInstance);
+        }
+
+        // embedded forms
+        $embeddedForms = $metadata->getEmbeddedForms();
+        if (!empty($embeddedForms)) {
+            self::$embedDepth++;
+            if (self::$embedDepth >= self::$MAX_FORM_EMBEDDED_DEPTH) {
+                throw new \Exception("\$MAX_FORM_EMBEDDED_DEPTH '".self::$MAX_FORM_EMBEDDED_DEPTH."' reached for embedded forms - do you have two forms linked to each other?");
+            }
+        }
+        foreach($embeddedForms as $embeddedForm) {
+            $genericFormMapperFormType = new GenericFormMapperFormType($embeddedForm->name,$embeddedForm->value,$this);
+            $formBuilder->add($embeddedForm->name,$genericFormMapperFormType);
         }
 
         return $formBuilder;

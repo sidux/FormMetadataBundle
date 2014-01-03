@@ -8,8 +8,19 @@
 
 namespace Malwarebytes\FormMetadataBundle\Tests\Fixtures;
 
+use Malwarebytes\FormMetadataBundle\Configuration as Form;
 
 class TestChildEntity {
+    /**
+     * @Form\Field("text")
+     * @var
+     */
     public $name;
+
+
+    /**
+     * @Form\Field("text")
+     * @var
+     */
     public $age;
 } 
