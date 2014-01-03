@@ -30,19 +30,28 @@ as a best practice.
      * @Form\FieldGroup("example")
      */
 
-**Embedded Entity Example**
+**FormType Entity Example**
 
     /**
      * Refer to http://symfony.com/doc/current/book/forms.html#embedded-forms
      *
-     * You have to generate your own FormType in current implementation
+     * Using your own FormType.
      *
      * @Form\FormType("Acme\TaskBundle\Form\Type\CategoryType")
      */
 
+**Embedded Entity Example**
+
+    /**
+     * View full example below.
+     *
+     * @Form\EmbeddedForm("Acme\TaskBundle\Entity\Category")
+     */
 
 
 ### Entity with some basic form annotations
+
+    namespace Acme\Bundle\Entity;
 
     use Malwarebytes\FormMetadataBundle\Configuration as Form;
     use Symfony\Bundle\Validator\Constraints as Assert;
@@ -60,6 +69,35 @@ as a best practice.
          */
         public $message;
     }
+
+### Entity With Above Entity Embedded
+
+    namespace Acme\Bundle\Entity;
+
+    use Malwarebytes\FormMetadataBundle\Configuration as Form;
+    use Symfony\Bundle\Validator\Constraints as Assert;
+
+    class Order
+    {
+        /**
+         * @Form\Field("text")
+         * @Assert\NotBlank()
+         */
+        public $name;
+
+        /**
+         * @Form\Field("text")
+         */
+        public $id;
+
+        /**
+         * @Form\EmbeddedForm("Acme\Bundle\Entity\Contact")
+         */
+        public $contact;
+    }
+
+
+
 
 ### Simple controller
 

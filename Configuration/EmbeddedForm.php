@@ -12,16 +12,13 @@ use \Doctrine\Common\Annotations\Annotation;
 
 
 /**
- * Class FormType
+ * Class EmbeddedForm
  *
- * Contains the configuration elements to embed a model entity within a parent model and create proper forms for it.
- * Requires the embedded model to have implemented an \Symfony\Component\Form\AbstractType or
- * \Symfony\Component\Form\FormTypeInterface. Please refer to
- * http://symfony.com/doc/current/book/forms.html#embedded-forms for more information.
+ * Form Metadata Mapper implementation of embedded forms.
+ * http://symfony.com/doc/current/book/forms.html#embedded-forms
  *
- * e.g. @Form\FormType("Acme\TaskBundle\Form\Type\Category")
- *
- * TODO: Create on-the-fly AbstractType generation for forms
+ * e.g. @Form\FormType("Acme\TaskBundle\Entity\Category")
+
  *
  * @package Malwarebytes\FormMetadataBundle\Configuration
  * @author Jonathan Chan (jchan@malwarebytes.org)
