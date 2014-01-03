@@ -34,11 +34,16 @@ class FormMetadata
     protected $formTypes = array();
 
     /**
+     * @var array
+     */
+    protected $embeddedForms = array();
+
+    /**
      * @param array $formTypes
      */
-    public function addFormType($formTypes)
+    public function addFormType($formType)
     {
-        $this->formTypes[] = $formTypes;
+        $this->formTypes[] = $formType;
     }
 
     /**
@@ -67,6 +72,22 @@ class FormMetadata
     public function getFields()
     {
         return $this->fields;
+    }
+
+    /**
+     * @param $embeddedForm
+     */
+    public function addEmbeddedForm($embeddedForm)
+    {
+        $this->embeddedForms[] = $embeddedForm;
+    }
+
+    /**
+     * @return array
+     */
+    public function getEmbeddedForms()
+    {
+        return $this->embeddedForms;
     }
 	
 	/**

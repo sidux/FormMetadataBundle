@@ -9,6 +9,7 @@
  */
 namespace Malwarebytes\FormMetadataBundle;
 
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormFactory,
     Malwarebytes\FormMetadataBundle\Driver\MetadataDriverInterface;
 /**
@@ -39,21 +40,32 @@ class FormMapper
 
     /**
      * Obtains any form metadata from the entity and adds itself to the form
-     * @param $entity
-     * @param $form
+     * @param $data entity that should be mapped
      * @return
      */
     public function createFormBuilder($data = null, array $options = array())
     {
         // Build the $form
         $formBuilder = $this->factory->createBuilder('form', $data, $options);
-        
+
+        return $this->mapMetadataToFormBuilder($data,$formBuilder,$options);
+    }
+
+    /**
+     * Maps an Entity's metadata to a FormBuilder
+     *
+     * @param $metadataEntity
+     * @param FormBuilderInterface $formBuilder
+     * @return FormBuilderInterface
+     */
+    public function mapMetadataToFormBuilder($metadataEntity, FormBuilderInterface $formBuilder)
+    {
         // Read the entity meta data and add to the form
         if(empty($this->drivers)) return $formBuilder;
 
         // Look to the readers to find metadata
         foreach ($this->drivers as $driver) {
-            $metadata = $driver->getMetadata($data);
+            $metadata = $driver->getMetadata($metadataEntity);
             if(!empty($metadata)) break;
         }
 
@@ -66,17 +78,17 @@ class FormMapper
             // TODO: Detect references to "%service.id%" for service constructor dependency
             $formBuilder->add($field->name, $field->value, $field->options);
         }
-		
-		$groups = $metadata->getGroups();
+
+        $groups = $metadata->getGroups();
 
         foreach($groups as $groupName => $fields) {
             $builder = $formBuilder->create($groupName, 'form', array('virtual' => true));
-            
-            
+
+
             foreach($fields as $field) {
                 $builder->add($field->name, $field->value, $field->options);
             }
-            
+
             $formBuilder->add($builder);
         }
 

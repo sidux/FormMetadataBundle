@@ -23,4 +23,14 @@ class TestEntity {
      * @var
      */
     public $Child;
+
+
+    /**
+     * @Form\EmbeddedForm("Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestChildEntity")
+     * @var
+     */
+    public $EmbeddedChild;
+
+
+
 } 
