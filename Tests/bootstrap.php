@@ -23,7 +23,7 @@ if (!file_exists($file)) {
 $annotation_namespace_path=__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.".." .DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
 
 \Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace(
-    'Malwarebytes\FormMetadataBundle\Configuration',
+    'Corleonis\FormMetadataBundle\Configuration',
     $annotation_namespace_path
 );
 

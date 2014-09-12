@@ -6,7 +6,7 @@
  * Time: 2:22 PM
  */
 
-namespace Malwarebytes\FormMetadataBundle\Tests\Fixtures;
+namespace Corleonis\FormMetadataBundle\Tests\Fixtures;
 
 
 use Symfony\Component\Form\AbstractType;
@@ -23,7 +23,7 @@ class TestChildEntityFormType extends AbstractType {
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestChildEntity',
+            'data_class' => 'Corleonis\FormMetadataBundle\Tests\Fixtures\TestChildEntity',
         ));
     }
 

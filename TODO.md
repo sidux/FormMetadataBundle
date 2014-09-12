@@ -1,5 +1,5 @@
 * ~~Merge all open PRs for FormMetadataBundle~~
-* ~~Change namespace to Malwarebytes~~
+* ~~Change namespace to Corleonis~~
 * ~~Create packagist and composer entries~~
 * Migrate wiki over to forked project
 * ~~Feature: Create FormType annotation to allow embedded forms.~~

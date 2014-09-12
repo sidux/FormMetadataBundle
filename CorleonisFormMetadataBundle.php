@@ -7,12 +7,12 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle;
+namespace Corleonis\FormMetadataBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  *
  * @author camm (camm@flintinteractive.com.au)
  */
-class MalwarebytesFormMetadataBundle extends Bundle
+class CorleonisFormMetadataBundle extends Bundle
 {
 }

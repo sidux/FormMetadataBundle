@@ -6,7 +6,7 @@
  * Time: 2:22 PM
  */
 
-namespace Malwarebytes\FormMetadataBundle\Tests\Fixtures;
+namespace Corleonis\FormMetadataBundle\Tests\Fixtures;
 
 
 class TestChildEntity {

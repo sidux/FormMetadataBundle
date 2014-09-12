@@ -6,12 +6,12 @@
  * Time: 2:30 PM
  */
 
-namespace Malwarebytes\FormMetadataBundle\Tests\Configuration;
+namespace Corleonis\FormMetadataBundle\Tests\Configuration;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use Malwarebytes\FormMetadataBundle\Configuration\Field;
-use Malwarebytes\FormMetadataBundle\Driver\AnnotationsDriver;
-use Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestEntity;
+use Corleonis\FormMetadataBundle\Configuration\Field;
+use Corleonis\FormMetadataBundle\Driver\AnnotationsDriver;
+use Corleonis\FormMetadataBundle\Tests\Fixtures\TestEntity;
 
 class FormTypeTest extends \PHPUnit_Framework_TestCase {
     function setUp()
@@ -29,6 +29,6 @@ class FormTypeTest extends \PHPUnit_Framework_TestCase {
         $formType = $metadata->getFormTypes();
 
         $this->assertEquals("Child",$formType[0]->name);
-        $this->assertEquals('Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestChildEntityFormType',$formType[0]->value);
+        $this->assertEquals('Corleonis\FormMetadataBundle\Tests\Fixtures\TestChildEntityFormType',$formType[0]->value);
     }
 } 

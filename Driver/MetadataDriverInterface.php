@@ -7,8 +7,9 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle\Driver;
-use Malwarebytes\FormMetadataBundle\FormMetadata;
+namespace Corleonis\FormMetadataBundle\Driver;
+
+use Corleonis\FormMetadataBundle\FormMetadata;
 
 /**
  *

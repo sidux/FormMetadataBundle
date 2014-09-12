@@ -44,7 +44,7 @@ as a best practice.
 
 ### Entity with some basic form annotations
 
-    use Malwarebytes\FormMetadataBundle\Configuration as Form;
+    use Corleonis\FormMetadataBundle\Configuration as Form;
     use Symfony\Bundle\Validator\Constraints as Assert;
 
     class Contact
@@ -85,7 +85,7 @@ as a best practice.
 
 ### Composer Installation
 
-    php composer.phar require malwarebytes/form-metadata-bundle
+    php composer.phar require corleonis/formmetadata
 
 
 ### Register the bundle references
@@ -95,7 +95,7 @@ as a best practice.
     {
         return array(
             // ...
-            new Malwarebytes\FormMetadataBundle\FlintLabsFormMetadataBundle(),
+            new Corleonis\FormMetadataBundle\FlintLabsFormMetadataBundle(),
             // ...
         );
     }

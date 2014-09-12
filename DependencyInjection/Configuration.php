@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Malwarebytes\FormMetadataBundle\DependencyInjection;
+namespace Corleonis\FormMetadataBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

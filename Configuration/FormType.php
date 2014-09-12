@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jonathan
- * Date: 1/1/14
- * Time: 2:11 AM
- */
 
-namespace Malwarebytes\FormMetadataBundle\Configuration;
+namespace Corleonis\FormMetadataBundle\Configuration;
 
 use \Doctrine\Common\Annotations\Annotation;
 
@@ -23,8 +17,8 @@ use \Doctrine\Common\Annotations\Annotation;
  *
  * TODO: Create on-the-fly AbstractType generation for forms
  *
- * @package Malwarebytes\FormMetadataBundle\Configuration
- * @author Jonathan Chan (jchan@malwarebytes.org)
+ * @package Corleonis\FormMetadataBundle\Configuration
+ * @author Alex Rashkov (alex.rashkov@moo.com)
  * @Annotation
  */
 class FormType {

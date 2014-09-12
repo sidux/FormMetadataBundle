@@ -6,9 +6,9 @@
  * Time: 2:21 PM
  */
 
-namespace Malwarebytes\FormMetadataBundle\Tests\Fixtures;
+namespace Corleonis\FormMetadataBundle\Tests\Fixtures;
 
-use Malwarebytes\FormMetadataBundle\Configuration as Form;
+use Corleonis\FormMetadataBundle\Configuration as Form;
 
 class TestEntity {
     /**
@@ -19,7 +19,7 @@ class TestEntity {
 
 
     /**
-     * @Form\FormType("Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestChildEntityFormType")
+     * @Form\FormType("Corleonis\FormMetadataBundle\Tests\Fixtures\TestChildEntityFormType")
      * @var
      */
     public $Child;

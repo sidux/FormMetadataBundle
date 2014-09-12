@@ -7,9 +7,9 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle;
-use Malwarebytes\FormMetadataBundle\Configuration\Field;
-use Malwarebytes\FormMetadataBundle\Configuration\FormType;
+namespace Corleonis\FormMetadataBundle;
+use Corleonis\FormMetadataBundle\Configuration\Field;
+use Corleonis\FormMetadataBundle\Configuration\FormType;
 
 /**
  * The meta data containing the configuration of the form

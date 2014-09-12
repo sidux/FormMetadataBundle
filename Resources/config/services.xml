@@ -4,8 +4,8 @@
 
 
 	<parameters>
-        <parameter key="form_metadata.mapper.class">Malwarebytes\FormMetadataBundle\FormMapper</parameter>
-		<parameter key="form_metadata.reader.annotation.class">Malwarebytes\FormMetadataBundle\Driver\AnnotationsDriver</parameter>
+        <parameter key="form_metadata.mapper.class">Corleonis\FormMetadataBundle\FormMapper</parameter>
+		<parameter key="form_metadata.reader.annotation.class">Corleonis\FormMetadataBundle\Driver\AnnotationsDriver</parameter>
 	</parameters>
 
     <services>

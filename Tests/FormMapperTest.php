@@ -6,12 +6,12 @@
  * Time: 3:26 PM
  */
 
-namespace Malwarebytes\FormMetadataBundle\Tests;
+namespace Corleonis\FormMetadataBundle\Tests;
 
 
-use Malwarebytes\FormMetadataBundle\Driver\AnnotationsDriver;
-use Malwarebytes\FormMetadataBundle\FormMapper;
-use Malwarebytes\FormMetadataBundle\Tests\Fixtures\TestEntity;
+use Corleonis\FormMetadataBundle\Driver\AnnotationsDriver;
+use Corleonis\FormMetadataBundle\FormMapper;
+use Corleonis\FormMetadataBundle\Tests\Fixtures\TestEntity;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\Test\TypeTestCase;
 

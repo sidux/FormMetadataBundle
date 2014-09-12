@@ -7,10 +7,11 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle;
+namespace Corleonis\FormMetadataBundle;
 
-use Symfony\Component\Form\FormFactory,
-    Malwarebytes\FormMetadataBundle\Driver\MetadataDriverInterface;
+use Symfony\Component\Form\FormFactory;
+use Corleonis\FormMetadataBundle\Driver\MetadataDriverInterface;
+
 /**
  * Obtains any metadata from the entity and adds it's configuration
  * to the form

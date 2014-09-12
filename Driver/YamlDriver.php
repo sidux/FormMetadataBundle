@@ -7,7 +7,7 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle\Driver;
+namespace Corleonis\FormMetadataBundle\Driver;
 /**
  *
  * @author camm (camm@flintinteractive.com.au)

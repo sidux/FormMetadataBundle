@@ -7,8 +7,8 @@
  * For full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Malwarebytes\FormMetadataBundle\Driver;
-use Malwarebytes\FormMetadataBundle\FormMetadata;
+namespace Corleonis\FormMetadataBundle\Driver;
+use Corleonis\FormMetadataBundle\FormMetadata;
 /**
  *
  * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
@@ -31,9 +31,9 @@ class AnnotationsDriver implements MetadataDriverInterface
         while (is_object($reflectionClass)) {
             $properties = $reflectionClass->getProperties();
             foreach($properties as $property) {
-                $field = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\Field');
-				$fieldGroup = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\FieldGroup');
-                $formType = $reader->getPropertyAnnotation($property, 'Malwarebytes\FormMetadataBundle\Configuration\FormType');
+                $field = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\Field');
+				$fieldGroup = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FieldGroup');
+                $formType = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FormType');
                 if (!empty($fieldGroup) && !empty($field)) {
                     if (empty($field->name)) {
                         $field->name = $property->getName();
