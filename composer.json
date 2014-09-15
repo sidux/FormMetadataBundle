@@ -7,15 +7,15 @@
     "license": "MIT",
     "authors": [
         {
-        "name": "Alex Rashkov",
-	    "email": "alex.rashkov@moo.com",
-	    "role": "Software Developer"
-	},
+            "name": "Alex Rashkov",
+            "email": "alex.rashkov@moo.com",
+            "role": "Software Developer"
+	    },
         {
-        "name": "Cameron Manderson",
-	    "email": "cameronmanderson@gmail.com",
-	    "role": "Original Author"
-	}
+            "name": "Cameron Manderson",
+            "email": "cameronmanderson@gmail.com",
+            "role": "Original Author"
+	    }
     ],
     "require": {
         "php": ">=5.3.3"
