@@ -26,8 +26,7 @@
     },
     "autoload": {
         "psr-0": {
-            "FormMetadataBundle\\": ""
+            "Corleonis\\FormMetadataBundle": ""
         }
-    },
-    "target-dir":"FormMetadataBundle"
+    }
 }
