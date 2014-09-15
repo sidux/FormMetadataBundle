@@ -10,12 +10,12 @@
             "name": "Alex Rashkov",
             "email": "alex.rashkov@moo.com",
             "role": "Software Developer"
-	    },
+        },
         {
             "name": "Cameron Manderson",
             "email": "cameronmanderson@gmail.com",
             "role": "Original Author"
-	    }
+        }
     ],
     "require": {
         "php": ">=5.3.3"
@@ -25,8 +25,7 @@
         "doctrine/annotations":"1.1.2"
     },
     "autoload": {
-        "psr-0": {
-            "Corleonis\\FormMetadataBundle": ""
-        }
-    }
+        "psr-0": {"Corleonis\\FormMetadataBundle": ""}
+    },
+    "target-dir":"Corleonis/FormMetadataBundle"
 }
