@@ -9,6 +9,7 @@
  */
 namespace Corleonis\FormMetadataBundle;
 
+use Corleonis\FormMetadataBundle\Configuration\FieldEntityType;
 use Symfony\Component\Form\FormFactory;
 use Corleonis\FormMetadataBundle\Driver\MetadataDriverInterface;
 
@@ -79,6 +80,13 @@ class FormMapper
             }
             
             $formBuilder->add($builder);
+        }
+
+        $entities = $metadata->getFieldEntities();
+        foreach ($entities as $entity) {
+            $fieldEntityType = new FieldEntityType($entity->getClass(), $entity->getName(), $entity->getFields());
+
+            $formBuilder->add($entity->getName(), $fieldEntityType, $entity->getOptions());
         }
 
         $formTypes = $metadata->getFormTypes();
