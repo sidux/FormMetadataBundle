@@ -40,9 +40,9 @@ class FormMapper
 
     /**
      * Obtains any form metadata from the entity and adds itself to the form
-     * @param $entity
-     * @param $form
-     * @return
+     * @param string $data
+     * @param array $options
+     * @return \Symfony\Component\Form\FormBuilderInterface
      */
     public function createFormBuilder($data = null, array $options = array())
     {
@@ -93,7 +93,7 @@ class FormMapper
 
     /**
      * Add an entity metadata reader to the readers
-     * @param EntityMetadataReaderInterface $reader
+     * @param MetadataDriverInterface $driver
      * @return void
      */
     public function addDriver(MetadataDriverInterface $driver)

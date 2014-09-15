@@ -4,7 +4,9 @@
  * Date: 21/09/11
  */
 namespace Corleonis\FormMetadataBundle\Configuration;
+
 use \Doctrine\Common\Annotations\Annotation;
+
 /**
  * e.g. @Form\FieldGroup('example')
  * @author camm (camm@flintinteractive.com.au), european(info@nils-werner.com)
