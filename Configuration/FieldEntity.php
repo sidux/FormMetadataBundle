@@ -8,7 +8,7 @@ use Corleonis\FormMetadataBundle\Configuration\Field;
 /**
  * Contains the configuration elements for the field
  *
- * e.g. @Form\Field("text", foo="bar")
+ * e.g. @Form\FieldEntity(class="\Acme\Foo\Bar", list="false")
  *
  * @author Alex (alex.rashkov@moo.com)
  * @Annotation
@@ -24,13 +24,19 @@ class FieldEntity extends Annotation {
      * The parameter name
      * @var string
      */
-    public $name;
+    private $name;
 
     /**
      * Form entity class, used for nested fields
      * @var mixed
      */
-    public $class;
+    private $class;
+
+    /**
+     * If the entity is list of entities.
+     * @var bool
+     */
+    private $list = false;
 
     /**
      * The options to pass through
@@ -52,7 +58,38 @@ class FieldEntity extends Annotation {
      */
     public function __set($name, $value)
     {
-        $this->options[$name] = $value;
+        switch($name) {
+            case 'list':
+                $this->setList($value);
+                return;
+            case 'class':
+                $this->setClass($value);
+                return;
+            case 'name':
+                $this->setName($value);
+                return;
+            default:
+                // if the property is unknown add it to options
+                $this->options[$name] = $value;
+        }
+    }
+
+    /**
+     * Denotes if the entity is a list of entities itself.
+     * @param boolean $list
+     */
+    public function setList($list)
+    {
+        $this->list = $list;
+    }
+
+    /**
+     * Denotes if the entity is a list of entities itself.
+     * @return boolean
+     */
+    public function isList()
+    {
+        return $this->list;
     }
 
     /**

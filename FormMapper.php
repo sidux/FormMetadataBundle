@@ -86,7 +86,18 @@ class FormMapper
         foreach ($entities as $entity) {
             $fieldEntityType = new FieldEntityType($entity->getClass(), $entity->getName(), $entity->getFields());
 
-            $formBuilder->add($entity->getName(), $fieldEntityType, $entity->getOptions());
+            $options = $entity->getOptions();
+            if($entity->isList()) {
+                $formBuilder->add($entity->getName(), 'collection', array(
+                    'type' => $fieldEntityType,
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'prototype' => true,
+                    'options' => $entity->getOptions()
+                ));
+            } else {
+                $formBuilder->add($entity->getName(), $fieldEntityType, $options);
+            }
         }
 
         $formTypes = $metadata->getFormTypes();
