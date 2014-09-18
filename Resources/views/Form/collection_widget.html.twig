@@ -1,0 +1,54 @@
+{% block collection_widget %}
+    {%- set remove_button = '<a class="remove-item-link" href="#">Remove item</a><br />' -%}
+
+    {% if prototype is defined %}
+        {% set prototype_markup = remove_button ~ form_row(prototype) %}
+        {% set prototype_markup = '<div class="single-item-holder">' ~ prototype_markup ~ '</div>' %}
+        {%- set attr = attr|merge({'data-prototype': prototype_markup }) -%}
+    {% endif %}
+    <div class="collection_{{ form.vars.name }}" {{ block('widget_container_attributes') }}>
+        {{ form_errors(form) }}
+        {% for row in form %}
+            <div class="single-item-holder">
+                {{ remove_button }}
+                {{ form_widget(row) }}
+            </div>
+        {% endfor %}
+        {{ form_rest(form) }}
+        <a href="#" class="add-item-link">Add item</a>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function addTagForm($collectionHolder, $newLinkLi) {
+            var prototype = $collectionHolder.data('prototype');
+            var index = $collectionHolder.data('index');
+
+            // Replace '__name__' in the prototype's HTML to
+            // instead be a number based on how many items we have
+            var newForm = prototype.replace(/__name__/g, index);
+
+            // increase the index with one for the next item
+            $collectionHolder.data('index', index + 1);
+            $newLinkLi.before($(newForm));
+        }
+
+        var formName = "{{ form.vars.name | e('js') }}";
+        var $collectionHolder;
+        var $addItemLink = $('.collection_' + formName + ' a.add-item-link');
+        $(document).ready(function() {
+            $collectionHolder = $('div#form_' + formName);
+            $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+            $addItemLink.on('click', function(e) {
+                e.preventDefault();
+                addTagForm($collectionHolder, $addItemLink);
+            });
+            $collectionHolder.on('click', 'a.remove-item-link', function(e) {
+                e.preventDefault();
+                $(this).parent('.single-item-holder').remove();
+                console.log($(this));
+            });
+        });
+    </script>
+{% endblock collection_widget %}
