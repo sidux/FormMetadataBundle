@@ -79,9 +79,11 @@ class AnnotationsDriver implements MetadataDriverInterface
             $fieldEntity = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FieldEntity');
 
             // prepare the option fields for our field
-            $preparer = FieldOptionPreparerFactory::get($field->value);
-            if ($preparer) {
-                $preparer->prepare($field);
+            if ($field && $field->value) {
+                $preparer = FieldOptionPreparerFactory::get($field->value);
+                if ($preparer) {
+                    $preparer->prepare($field);
+                }
             }
 
             if (!empty($fieldGroup) && !empty($field)) {

@@ -7,7 +7,7 @@ use InvalidArgumentException;
 
 class FieldOptionPreparerFactory {
 
-    const BASE_CLASS_PATH = "\\Corleonis\\FormMetadataBundle\\Configuration\\FieldOptionPreparer\\";
+    const BASE_CLASS_PATH = "\\Corleonis\\FormMetadataBundle\\Configuration\\FieldOptionPreparer\\%sFieldOptionPreparer";
 
     private function __construct() {}
 
@@ -22,9 +22,13 @@ class FieldOptionPreparerFactory {
             throw new InvalidArgumentException("Option preparer type must be a string representation of the field type.");
         }
 
-        $class = static::BASE_CLASS_PATH . ucfirst($type);
-        if (class_exists($class) && $class instanceof AbstractOptionPreparer) {
-            return $class;
+        $class = sprintf(static::BASE_CLASS_PATH, ucfirst($type));
+        if (class_exists($class)) {
+            $object = new $class;
+
+            if($object instanceof AbstractOptionPreparer) {
+                return $object;
+            }
         }
 
         return null;
