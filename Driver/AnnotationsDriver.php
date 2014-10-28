@@ -9,6 +9,7 @@
  */
 namespace Corleonis\FormMetadataBundle\Driver;
 
+use Corleonis\FormMetadataBundle\Configuration\FieldOptionPreparerFactory;
 use Corleonis\FormMetadataBundle\FormMetadata;
 
 /**
@@ -76,6 +77,13 @@ class AnnotationsDriver implements MetadataDriverInterface
             $fieldGroup = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FieldGroup');
             $formType = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FormType');
             $fieldEntity = $reader->getPropertyAnnotation($property, 'Corleonis\FormMetadataBundle\Configuration\FieldEntity');
+
+            // prepare the option fields for our field
+            $preparer = FieldOptionPreparerFactory::get($field->value);
+            if ($preparer) {
+                $preparer->prepare($field);
+            }
+
             if (!empty($fieldGroup) && !empty($field)) {
                 if (empty($field->name)) {
                     $field->name = $property->getName();
