@@ -95,7 +95,7 @@ as a best practice.
     {
         return array(
             // ...
-            new Corleonis\FormMetadataBundle\FlintLabsFormMetadataBundle(),
+            new Corleonis\FormMetadataBundle\CorleonisFormMetadataBundle(),
             // ...
         );
     }
